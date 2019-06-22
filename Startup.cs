@@ -56,9 +56,10 @@ namespace WebAppCurso
                 options.Lockout.MaxFailedAccessAttempts = 3;
                 options.Lockout.AllowedForNewUsers = true;
 
-                options.User
-                
-            })
+                options.User.AllowedUserNameCharacters =
+                "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789-.@+";
+                options.User.RequireUniqueEmail = false;
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IdentityErrorDescriber, MyIdentityErrorDescriber>();
